@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="@drawable/bg"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -16,34 +16,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:contentDescription="@string/strAboutUs"
-        android:src="@drawable/abouticon" />
-
-    <Button
-        android:id="@+id/Inventory"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/strInventory"
-        android:textColor="#FFF" />
-
-    <Button
-        android:id="@+id/Fight"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_below="@+id/Inventory"
-        android:layout_centerHorizontal="true"
-        android:text="@string/strFight"
-        android:textColor="#FFF" />
-
-    <Button
-        android:id="@+id/ScanQR"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_below="@+id/Fight"
-        android:layout_centerHorizontal="true"
-        android:text="@string/strScanQR"
-        android:textColor="#FFF" />
+        android:src="@drawable/abouticon" 
+        android:onClick="aboutListener"/>
 
     <TextView
         android:id="@+id/textViewAbout"
@@ -52,7 +26,44 @@
         android:layout_above="@+id/AboutButton"
         android:layout_alignRight="@+id/AboutButton"
         android:text="@string/strAboutUs"
-        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/Fight"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:alpha="0.75"
+        android:background="#00000A"
+        android:text="@string/strFight"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/Inventory"
+        style="@style/AppTheme"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_below="@+id/Fight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:alpha="0.75"
+        android:background="#00000A"
+        android:text="@string/strInventory"
+        android:textColor="#FFF"
+        android:color="#FFF" />
+
+    <Button
+        android:id="@+id/ScanQR"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_below="@+id/Inventory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:alpha="0.75"
+        android:background="#00000A"
+        android:text="@string/strScanQR"
         android:textColor="#FFF" />
 
 </RelativeLayout>
