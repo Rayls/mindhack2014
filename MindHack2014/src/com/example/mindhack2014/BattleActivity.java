@@ -1,5 +1,7 @@
 package com.example.mindhack2014;
 
+import java.util.Random;
+
 import com.example.mindhack2014.Muffin;
 
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class BattleActivity extends ActionBarActivity {
@@ -27,11 +30,7 @@ public class BattleActivity extends ActionBarActivity {
 		TextView p1TextView = (TextView)findViewById(R.id.textViewP1HP);
 		TextView aiTextView = (TextView)findViewById(R.id.textViewAIHP);		
 		p1TextView.setText(p1Muffin.getMuffinHP() + " / " + p1Muffin.getMuffinMaxHP());
-		aiTextView.setText(aiMuffin.getMuffinHP() + " / " + aiMuffin.getMuffinMaxHP());
-		
-		
-		
-		
+		aiTextView.setText(aiMuffin.getMuffinHP() + " / " + aiMuffin.getMuffinMaxHP());		
 	}
 
 	@Override
@@ -55,14 +54,32 @@ public class BattleActivity extends ActionBarActivity {
 	
 	public void dealDmg(View view) {
 			TextView aiTextView = (TextView)findViewById(R.id.textViewAIHP);
-			if (aiMuffin.getMuffinHP() > 0)
-				aiMuffin.setMuffinHP(-5);
-			else
+			ProgressBar aiProgBar = (ProgressBar)findViewById(R.id.ProgressBarAIHP);
+			TextView p1TextView = (TextView)findViewById(R.id.textViewP1HP);
+			ProgressBar p1ProgBar = (ProgressBar)findViewById(R.id.ProgressBarP1HP);
+			Random rand = new Random();
+			if (aiMuffin.getMuffinHP() > 0)	
 			{
-				TextView msg = (TextView)findViewById(R.id.textViewEndBattle);
-				msg.setText("YOU WIN!!!");
+				aiMuffin.setMuffinHP(-(rand.nextInt((5 - 1) + 1) + 1));
+				if (aiMuffin.getMuffinHP() <= 0)
+				{
+					TextView msg = (TextView)findViewById(R.id.textViewEndBattle);
+					msg.setText("YOU WIN!!!");
+				}
+				if (p1Muffin.getMuffinHP() > 0 && aiMuffin.getMuffinHP() > 0)
+				{
+					p1Muffin.setMuffinHP(-(rand.nextInt((5 - 1) + 1) + 1));
+					if (p1Muffin.getMuffinHP() <= 0)
+					{
+						TextView msg = (TextView)findViewById(R.id.textViewEndBattle);
+						msg.setText("YOU LOSE!!!");
+					}
+				}
+				
 			}
-
+			aiProgBar.setProgress((aiMuffin.getMuffinHP() / aiMuffin.getMuffinMaxHP()) * 100);
 			aiTextView.setText(aiMuffin.getMuffinHP() + " / " + aiMuffin.getMuffinMaxHP());
+			p1ProgBar.setProgress((p1Muffin.getMuffinHP() / p1Muffin.getMuffinMaxHP()) * 100);
+			p1TextView.setText(p1Muffin.getMuffinHP() + " / " + p1Muffin.getMuffinMaxHP());
 	   }
 }

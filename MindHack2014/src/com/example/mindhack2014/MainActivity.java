@@ -19,11 +19,17 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addListenerOnButton();
+        ItemDao db = new ItemDao(this);
+        /*db.create(new Item("health","potion",5));
+        db.create(new Item("dmgup","item",5));*/
+        db.create(new Item());
+        
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+    
     	super.onActivityResult(requestCode, resultCode, data);
 
     	if (requestCode == 0) {

@@ -60,7 +60,7 @@
         android:id="@+id/textViewAIHP"
         android:layout_width="125dip"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ImgViewAIMuffin"
+        android:layout_below="@+id/ProgressBarAIHP"
         android:layout_alignRight="@+id/itemBtn"
         android:textColor="#FFF" />
 
@@ -69,18 +69,9 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textViewAIHP"
-        android:layout_alignLeft="@+id/ImgViewAIMuffin"
-        android:layout_alignRight="@+id/itemBtn"
-        android:progress="100" />
-
-    <ImageView
-        android:id="@+id/ImgViewAIMuffin"
-        android:layout_width="125dip"
-        android:layout_height="125dip"
-        android:layout_alignBottom="@+id/textView1"
         android:layout_alignLeft="@+id/textViewAIHP"
-        android:src="@drawable/p1muffin" />
+        android:layout_alignParentRight="true"
+        android:progress="100" />
 
     <TextView
         android:id="@+id/textViewEndBattle"
@@ -88,7 +79,17 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/ProgressBarP1HP"
         android:layout_alignRight="@+id/attackBtn"
+        android:gravity="center"
         android:textColor="#FFF"
-        android:textSize="20sp" />
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/ImgViewAIMuffin"
+        android:layout_width="125dip"
+        android:layout_height="125dip"
+		android:layout_below="@+id/textViewAIHP"
+        android:src="@drawable/p1muffin"
+        android:layout_alignRight="@+id/itemBtn"
+         />
 
 </RelativeLayout>
