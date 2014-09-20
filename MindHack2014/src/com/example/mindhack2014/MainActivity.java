@@ -120,4 +120,9 @@ public class MainActivity extends ActionBarActivity {
 	   Intent intent = new Intent(this, InventoryActivity.class);
 	   startActivity(intent);
    }
+   
+   public void battleListener(View view) {
+	   Intent battleIntent = new Intent(this, BattleActivity.class);
+	   startActivity(battleIntent);
+   }
 }

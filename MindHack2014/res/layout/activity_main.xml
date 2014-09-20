@@ -38,7 +38,8 @@
         android:alpha="0.75"
         android:background="#00000A"
         android:text="@string/strFight"
-        android:textColor="#FFF" />
+        android:textColor="#FFF"
+        android:onClick="battleListener" />
 
     <Button
         android:id="@+id/Inventory"
