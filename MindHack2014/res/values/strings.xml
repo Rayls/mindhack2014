@@ -6,6 +6,6 @@
     <string name="strFight">Fight</string>
 	<string name="strScanQR">Scan QR Code</string>
 	<string name="strInventory">Inventory</string>
-	<string name="strAboutUs">AboutUs</string>
+	<string name="strAboutUs">About</string>
 
 </resources>

@@ -9,34 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mindhack2014.MainActivity" >
 
-    <Button
-        android:id="@+id/Fight"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="152dp"
-        android:text="@string/strFight"
-        android:textColor="#FFF" />
-
-    <Button
-        android:id="@+id/Inventory"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_above="@+id/Fight"
-        android:layout_centerHorizontal="true"
-        android:text="@string/strScanQR"
-        android:textColor="#FFF" />
-
-    <Button
-        android:id="@+id/ScanQR"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_above="@+id/Inventory"
-        android:layout_centerHorizontal="true"
-        android:text="@string/strInventory"
-        android:textColor="#FFF" />
-
     <ImageButton
         android:id="@+id/AboutButton"
         android:layout_width="50dip"
@@ -45,5 +17,42 @@
         android:layout_alignParentRight="true"
         android:contentDescription="@string/strAboutUs"
         android:src="@drawable/abouticon" />
+
+    <Button
+        android:id="@+id/Inventory"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/strInventory"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/Fight"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_below="@+id/Inventory"
+        android:layout_centerHorizontal="true"
+        android:text="@string/strFight"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/ScanQR"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_below="@+id/Fight"
+        android:layout_centerHorizontal="true"
+        android:text="@string/strScanQR"
+        android:textColor="#FFF" />
+
+    <TextView
+        android:id="@+id/textViewAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AboutButton"
+        android:layout_alignRight="@+id/AboutButton"
+        android:text="@string/strAboutUs"
+        android:textSize="18sp"
+        android:textColor="#FFF" />
 
 </RelativeLayout>
