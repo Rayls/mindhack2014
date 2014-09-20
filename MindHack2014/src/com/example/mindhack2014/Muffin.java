@@ -3,7 +3,7 @@ package com.example.mindhack2014;
 public class Muffin {
 	
 	
-	private int muffinHP, muffinDmg;
+	private int muffinHP, muffinDmg, muffinMaxHP;
 	private String muffinImgURL;
 	
 	public Muffin(int HP, int Dmg, String URL)
@@ -11,8 +11,13 @@ public class Muffin {
 		muffinHP = HP;
 		muffinDmg = Dmg;
 		muffinImgURL = URL;
+		muffinMaxHP = HP;
 	}
 	
+	public int getMuffinMaxHP()
+	{
+		return muffinMaxHP;
+	}
 	
 	public void setMuffinHP(int hp)
 	{

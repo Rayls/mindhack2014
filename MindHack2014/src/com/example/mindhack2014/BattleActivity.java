@@ -18,10 +18,22 @@ public class BattleActivity extends ActionBarActivity {
 	
 	
 	
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_battle);
+		TextView p1TextView = (TextView)findViewById(R.id.textViewP1HP);
+		TextView aiTextView = (TextView)findViewById(R.id.textViewAIHP);
+		
+		p1TextView.setText(p1Muffin.getMuffinHP() + " / " + p1Muffin.getMuffinMaxHP());
+		aiTextView.setText(aiMuffin.getMuffinHP() + " / " + aiMuffin.getMuffinMaxHP());
+		
+		
+		
+		
 	}
 
 	@Override

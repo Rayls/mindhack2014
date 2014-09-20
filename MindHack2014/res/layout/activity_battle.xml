@@ -24,7 +24,6 @@
         android:layout_height="50dip"
         android:layout_alignBaseline="@+id/itemBtn"
         android:layout_alignBottom="@+id/itemBtn"
-        android:layout_toLeftOf="@+id/itemBtn"
         android:text="@string/attackBtn" />
 
     <ImageView
@@ -37,42 +36,48 @@
         android:layout_marginLeft="20dp"
         android:src="@drawable/p1muffin" />
 
-    <ImageView
-        android:id="@+id/ImgViewAIMuffin"
-        android:layout_width="125dip"
-        android:layout_height="125dip"
-        android:layout_alignRight="@+id/itemBtn"
-        android:layout_below="@+id/ProgressBarAIHP"
-        android:src="@drawable/p1muffin" />
-
-    <ProgressBar
-        android:id="@+id/ProgressBarAIHP"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ImgViewAIMuffin"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/ImgViewAIMuffin"
-        android:layout_marginTop="18dp"
-        android:progress="100" />
-
-    <ProgressBar
-        android:id="@+id/ProgressBarP1HP"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ImgViewP1Muffin"
-        android:layout_alignRight="@+id/textViewP1HP"
-        android:layout_below="@+id/ImgViewAIMuffin"
-        android:progress="100" />
-
     <TextView
         android:id="@+id/textViewP1HP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/ImgViewP1Muffin"
         android:layout_alignLeft="@+id/ImgViewP1Muffin"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBarP1HP"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="125dip"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewP1HP"
+        android:layout_alignLeft="@+id/textViewP1HP"
+        android:layout_toLeftOf="@+id/itemBtn"
+        android:progress="100" />
+
+    <TextView
+        android:id="@+id/textViewAIHP"
+        android:layout_width="125dip"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ImgViewAIMuffin"
+        android:layout_alignRight="@+id/itemBtn"
+        android:textColor="#FFF" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBarAIHP"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewAIHP"
+        android:layout_alignLeft="@+id/ImgViewAIMuffin"
+        android:layout_alignRight="@+id/itemBtn"
+        android:progress="100" />
+
+    <ImageView
+        android:id="@+id/ImgViewAIMuffin"
+        android:layout_width="125dip"
+        android:layout_height="125dip"
+        android:layout_alignRight="@+id/itemBtn"
+        android:src="@drawable/p1muffin" />
 
 </RelativeLayout>
