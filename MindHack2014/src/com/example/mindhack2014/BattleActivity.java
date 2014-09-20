@@ -3,9 +3,11 @@ package com.example.mindhack2014;
 import com.example.mindhack2014.Muffin;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class BattleActivity extends ActionBarActivity {
@@ -14,20 +16,16 @@ public class BattleActivity extends ActionBarActivity {
 	private String muffURL = "", aiMuffURL = "";
 	
 	Muffin p1Muffin = new Muffin(muffHP, muffDmg, muffURL);
-	Muffin aiMuffin = new Muffin(aiMuffHP, aiMuffDmg, aiMuffURL);
+	Muffin aiMuffin = new Muffin(aiMuffHP, aiMuffDmg, aiMuffURL);	
 	
-	
-	
-	
-	
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_battle);
 		TextView p1TextView = (TextView)findViewById(R.id.textViewP1HP);
-		TextView aiTextView = (TextView)findViewById(R.id.textViewAIHP);
-		
+		TextView aiTextView = (TextView)findViewById(R.id.textViewAIHP);		
 		p1TextView.setText(p1Muffin.getMuffinHP() + " / " + p1Muffin.getMuffinMaxHP());
 		aiTextView.setText(aiMuffin.getMuffinHP() + " / " + aiMuffin.getMuffinMaxHP());
 		
@@ -54,4 +52,17 @@ public class BattleActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	public void dealDmg(View view) {
+			TextView aiTextView = (TextView)findViewById(R.id.textViewAIHP);
+			if (aiMuffin.getMuffinHP() > 0)
+				aiMuffin.setMuffinHP(-5);
+			else
+			{
+				TextView msg = (TextView)findViewById(R.id.textViewEndBattle);
+				msg.setText("YOU WIN!!!");
+			}
+
+			aiTextView.setText(aiMuffin.getMuffinHP() + " / " + aiMuffin.getMuffinMaxHP());
+	   }
 }

@@ -24,7 +24,8 @@
         android:layout_height="50dip"
         android:layout_alignBaseline="@+id/itemBtn"
         android:layout_alignBottom="@+id/itemBtn"
-        android:text="@string/attackBtn" />
+        android:text="@string/attackBtn"
+        android:onClick="dealDmg" />
 
     <ImageView
         android:id="@+id/ImgViewP1Muffin"
@@ -77,7 +78,17 @@
         android:id="@+id/ImgViewAIMuffin"
         android:layout_width="125dip"
         android:layout_height="125dip"
-        android:layout_alignRight="@+id/itemBtn"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/textViewAIHP"
         android:src="@drawable/p1muffin" />
+
+    <TextView
+        android:id="@+id/textViewEndBattle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ProgressBarP1HP"
+        android:layout_alignRight="@+id/attackBtn"
+        android:textColor="#FFF"
+        android:textSize="20sp" />
 
 </RelativeLayout>
