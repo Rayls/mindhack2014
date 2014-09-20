@@ -4,11 +4,17 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+<<<<<<< Updated upstream
 import android.view.View.OnClickListener;
 import android.widget.Button;
+=======
+import android.widget.Button;
+import android.view.View.OnClickListener;
+>>>>>>> Stashed changes
 
 
 public class MainActivity extends ActionBarActivity {
@@ -17,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< Updated upstream
         Button scan =(Button)  findViewById(R.id.ScanQR);
         scan.setOnClickListener(new OnClickListener(){
 
@@ -40,7 +47,26 @@ public class MainActivity extends ActionBarActivity {
 			}
         
         });
+=======
+        addListenerOnButton();
+>>>>>>> Stashed changes
     }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {           
+    	super.onActivityResult(requestCode, resultCode, data);
+    	if (requestCode == 0) {
+
+    		if (resultCode == RESULT_OK) {
+    			String contents = data.getStringExtra("SCAN_RESULT");        
+                Log.v(INPUT_SERVICE, contents);
+            }
+
+            if(resultCode == RESULT_CANCELED){
+                //handle cancel
+            }
+
+        }
 
     
     @Override
@@ -57,6 +83,8 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,4 +104,46 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+<<<<<<< Updated upstream
+=======
+    
+    Button button;
+    
+    
+    ///////// CUSTOM CODE
+	public void addListenerOnButton() {
+
+		// finds the button view and associate it to the button object
+
+		button = (Button) findViewById(R.id.ScanQR);
+
+		button.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				try {
+
+					Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+					intent.putExtra("SCAN_MODE", "QR_CODE_MODE"); // "PRODUCT_MODE
+					startActivityForResult(intent, 0);
+
+				} catch (Exception e) {
+
+					Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
+					Intent marketIntent = new Intent(Intent.ACTION_VIEW,marketUri);
+					startActivity(marketIntent);
+				}
+
+			}
+
+		});
+
+	}
+    
+   public void aboutListener(View view) {
+	   Intent aboutIntent = new Intent(this, AboutActivity.class);
+	   startActivity(aboutIntent);
+   }
+>>>>>>> Stashed changes
 }
