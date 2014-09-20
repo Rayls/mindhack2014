@@ -52,8 +52,7 @@
         android:background="#00000A"
         android:text="@string/strInventory"
         android:textColor="#FFF"
-        android:color="#FFF"
-        android:onClick="inventoryListener" />
+        android:color="#FFF" />
 
     <Button
         android:id="@+id/ScanQR"

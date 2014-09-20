@@ -44,7 +44,7 @@ public class MainActivity extends ActionBarActivity {
    }
    
    public void inventoryListener(View view) {
-	   Intent intent = new Intent(this, InventoryActivity.class);
+	   Intent intent = new Intent(this, inventoryActivity.class);
 	   startActivity(intent);
    }
 }

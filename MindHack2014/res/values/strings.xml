@@ -10,7 +10,7 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="aboutUsText">This program was written by: \nMike Pratt \nRay Higgins
-        \nWael Ali \nFaran Khattana \n\nAt the 2014 MobileSea Hackathon.
-        </string>
+        \nWael Ali \nFaran Khattana \n\nAt the 2014 MobileSea Hackathon.</string>
+    <string name="title_activity_inventory">InventoryActivity</string>
 
 </resources>
