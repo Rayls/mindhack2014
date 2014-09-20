@@ -10,31 +10,30 @@
     tools:context="com.example.mindhack2014.MainActivity" >
 
     <Button
-        android:id="@+id/Fight"
-        android:layout_width="200dip"
-        android:layout_height="50dip"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="152dp"
-        android:text="@string/strFight"
-        android:textColor="#FFF" />
-
-    <Button
         android:id="@+id/Inventory"
         android:layout_width="200dip"
         android:layout_height="50dip"
-        android:layout_above="@+id/Fight"
         android:layout_centerHorizontal="true"
-        android:text="@string/strScanQR"
+        android:layout_centerVertical="true"
+        android:text="@string/strInventory"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/Fight"
+        android:layout_width="200dip"
+        android:layout_height="50dip"
+        android:layout_above="@+id/Inventory"
+        android:layout_alignLeft="@+id/Inventory"
+        android:text="@string/strFight"
         android:textColor="#FFF" />
 
     <Button
         android:id="@+id/ScanQR"
         android:layout_width="200dip"
         android:layout_height="50dip"
-        android:layout_above="@+id/Inventory"
-        android:layout_centerHorizontal="true"
-        android:text="@string/strInventory"
+        android:layout_alignLeft="@+id/Inventory"
+        android:layout_below="@+id/Inventory"
+        android:text="@string/strScanQR"
         android:textColor="#FFF" />
 
     <ImageButton
@@ -45,5 +44,15 @@
         android:layout_alignParentRight="true"
         android:contentDescription="@string/strAboutUs"
         android:src="@drawable/abouticon" />
+
+    <TextView
+        android:id="@+id/textViewAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AboutButton"
+        android:layout_alignParentRight="true"
+        android:text="@string/strAboutUs"
+        android:textColor="#FFF"
+        android:textSize="18sp" />
 
 </RelativeLayout>
