@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Muffin Wars</string>
+
     <string name="action_settings">Settings</string>
     <string name="strFight">Fight</string>
     <string name="strScanQR">Scan QR Code</string>

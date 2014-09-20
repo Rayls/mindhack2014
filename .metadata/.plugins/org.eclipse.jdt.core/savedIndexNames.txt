@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+C:\projects\mindhack2014\.metadata\.plugins\org.eclipse.jdt.core
-91277909.index
-1284074322.index
